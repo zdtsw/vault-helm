@@ -1,0 +1,28 @@
+apiVersion: apps/v1beta2
+kind: Deployment
+metadata:
+  name: component1
+  namespace: wen-vault1
+  labels:
+    app: component1 
+    env: ci1
+spec:
+  selector:
+    matchLabels:
+      app: component1 
+      env: ci1
+  replicas: 1 
+  template:
+    metadata:
+      labels:
+        app: component1 
+        env: ci1
+    spec:
+      serviceAccountName: serviceaccount-wen-vault1
+      containers:
+      - name: component1-ci1
+        image: portcheck:latest
+        resources:           
+          limits:             
+            cpu: 100m
+            memory: 50Mi

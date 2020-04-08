@@ -1,0 +1,5 @@
+vault write auth/kubernetes/role/wen-vault1-component2 \
+   bound_service_account_names=serviceaccount-wen-vault1 \
+   bound_service_account_namespaces=wen-vault1 \
+   policies=wen-vault1-component2 \
+   ttl=1h
