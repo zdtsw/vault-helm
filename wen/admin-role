@@ -1,0 +1,6 @@
+vault write auth/kubernetes/role/vault_admin \
+ bound_service_account_names=serviceaccount-vault-admin \
+ bound_service_account_namespaces=wen-vault1 \
+ policies=vault_admin \
+ ttl=2h
+

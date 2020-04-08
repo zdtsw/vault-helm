@@ -1,27 +1,27 @@
 apiVersion: apps/v1beta2
 kind: Deployment
 metadata:
-  name: component1
+  name: component2
   namespace: wen-vault1
   labels:
-    app: component1 
-    env: ci1
+    app: component2
+    env: ci2
 spec:
   selector:
     matchLabels:
-      app: component1 
-      env: ci1
+      app: component2 
+      env: ci2
   replicas: 1 
   template:
     metadata:
       labels:
-        app: component1 
-        env: ci1
+        app: component2 
+        env: ci2 
     spec:
-      serviceAccountName: serviceaccount-wen-vault1
+      serviceAccountName: serviceaccount-vault-admin 
       automountServiceAccountToken: true
       containers:
-      - name: component1-ci1
+      - name: component1-ci2
         image: portcheck:latest
         resources:           
           limits:             
