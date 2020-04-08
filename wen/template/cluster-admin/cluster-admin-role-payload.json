@@ -1,0 +1,6 @@
+{
+  "bound_service_account_names": "serviceaccount-vault-cluster-admin",
+  "bound_service_account_namespaces": "*",
+  "policies": ["vault_admin"],
+  "max_ttl": TTLTIME 
+}

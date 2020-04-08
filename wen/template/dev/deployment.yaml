@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: APPLICATIONWEN 
+  namespace: NAMESPACEWEN 
+  labels:
+    app: APPLICATIONWEN 
+    env: ENV 
+spec:
+  selector:
+    matchLabels:
+      app: APPLICATIONWEN 
+      env: ENV 
+  replicas: 1 
+  template:
+    metadata:
+      labels:
+        app: APPLICATIONWEN 
+        env: ENV 
+    spec:
+      serviceAccountName: serviceaccount-APPLICATIONWEN 
+      automountServiceAccountToken: true
+      containers:
+      - name: APPLICATIONWEN-ENV 
+        image: "dtr.int.comhem.com/NAMESPACEWEN/APPLICATIONWEN:LATEST-VERSION-TAG"
+        resources:           
+          limits:             
+            cpu: 100m
+            memory: 50Mi

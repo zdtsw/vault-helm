@@ -1,0 +1,14 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: vault-dev 
+  namespace: patlunditest 
+spec:
+  rules:
+    - host: vault.patlunditest.ucp.int.comhem.com
+      http:
+        paths:
+          - backend:
+              serviceName: vault-dev
+              servicePort: 8200
+

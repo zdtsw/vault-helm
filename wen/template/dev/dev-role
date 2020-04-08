@@ -1,0 +1,5 @@
+vault write auth/kubernetes/role/NAMESPACEWEN-APPLICATIONWEN-role \
+   bound_service_account_names=serviceaccount-APPLICATIONWEN \
+   bound_service_account_namespaces=NAMESPACEWEN \
+   policies=APPLICATIONWEN \
+   ttl=TTLTIME
